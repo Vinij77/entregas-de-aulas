@@ -1,0 +1,32 @@
+class Estudante {
+    constructor(nome, email, ra, curso) {
+        this.nome = nome;
+        this.email = email;
+        this.ra = ra;
+        this.curso = curso;
+        this.disciplinas = [];
+    }
+
+    adicionarDisciplina(disciplina) {
+        this.disciplinas.push(disciplina);
+    }
+
+    primeiraDisciplina() {
+        if (this.disciplinas.length === 0) {
+            return "Nenhuma disciplina matriculada";
+        }
+        return this.disciplinas[0];
+    }
+
+    ultimaDisciplina() {
+        const numDisciplinas = this.disciplinas.length;
+        if (numDisciplinas === 0) {
+            return "Nenhuma disciplina matriculada";
+        }
+        return this.disciplinas[numDisciplinas - 1];
+    }
+
+    informacoes() {
+        return `${this.nome}, e-mail: ${this.email}, RA: ${this.ra}, cursando ${this.curso}, disciplinas matriculadas: ${this.disciplinas.join(', ')}`;
+    }
+}
